@@ -518,3 +518,266 @@ document.body.classList.remove("paused");
 console.log(
 "Trusted DC Seller V3 Part 2 Loaded Successfully."
 );
+/* ==========================================
+   TRUSTED DC SELLER
+   SCRIPT.JS V3 - PART 3
+========================================== */
+
+/* =============================
+      Mobile Menu
+============================= */
+
+const menuBtn = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".navbar ul");
+
+if (menuBtn && navMenu) {
+
+    menuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+        menuBtn.classList.toggle("active");
+    });
+
+}
+
+
+/* =============================
+      Theme Toggle
+============================= */
+
+const themeBtn = document.querySelector(".theme-toggle");
+
+if (themeBtn) {
+
+    themeBtn.addEventListener("click", () => {
+
+        document.body.classList.toggle("light-theme");
+
+        const mode =
+            document.body.classList.contains("light-theme")
+            ? "light"
+            : "dark";
+
+        localStorage.setItem("theme", mode);
+
+    });
+
+}
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+}
+
+
+/* =============================
+      Contact Form
+============================= */
+
+const contactForm = document.querySelector("#contactForm");
+
+if (contactForm) {
+
+contactForm.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const name =
+this.querySelector("[name=name]");
+
+const email =
+this.querySelector("[name=email]");
+
+const message =
+this.querySelector("[name=message]");
+
+if(
+!name.value ||
+!email.value ||
+!message.value
+){
+
+showToast("Please fill all fields.");
+
+return;
+
+}
+
+showToast("Message Sent Successfully!");
+
+this.reset();
+
+});
+
+}
+
+
+/* =============================
+      Service Search
+============================= */
+
+const search =
+document.querySelector("#serviceSearch");
+
+if(search){
+
+search.addEventListener("keyup",function(){
+
+const value =
+this.value.toLowerCase();
+
+document.querySelectorAll(".card")
+.forEach(card=>{
+
+const text =
+card.innerText.toLowerCase();
+
+card.style.display =
+text.includes(value)
+?"block":"none";
+
+});
+
+});
+
+}
+
+
+/* =============================
+      Toast Notification
+============================= */
+
+function showToast(text){
+
+const toast =
+document.createElement("div");
+
+toast.className="toast";
+
+toast.innerText=text;
+
+document.body.appendChild(toast);
+
+setTimeout(()=>{
+
+toast.classList.add("show");
+
+},50);
+
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+setTimeout(()=>{
+
+toast.remove();
+
+},400);
+
+},3000);
+
+}
+
+
+/* =============================
+      Number Formatting
+============================= */
+
+document.querySelectorAll(".price")
+.forEach(price=>{
+
+let number=
+price.innerText
+.replace(/[^\d]/g,"");
+
+if(number){
+
+price.innerText=
+"₹"+
+Number(number)
+.toLocaleString("en-IN");
+
+}
+
+});
+
+
+/* =============================
+      Image Lazy Loading
+============================= */
+
+const lazyImages =
+document.querySelectorAll("img[data-src]");
+
+const lazyObserver =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+const img=entry.target;
+
+img.src=img.dataset.src;
+
+img.removeAttribute("data-src");
+
+lazyObserver.unobserve(img);
+
+}
+
+});
+
+});
+
+lazyImages.forEach(img=>{
+
+lazyObserver.observe(img);
+
+});
+
+
+/* =============================
+      FAQ Accordion
+============================= */
+
+document.querySelectorAll(".faq-item")
+.forEach(item=>{
+
+item.addEventListener("click",()=>{
+
+item.classList.toggle("active");
+
+});
+
+});
+
+
+/* =============================
+      Floating Discord Button
+============================= */
+
+const discord =
+document.createElement("a");
+
+discord.href="https://discord.gg/3xh2aJM4d";
+
+discord.target="_blank";
+
+discord.className="floating-discord";
+
+discord.innerHTML=
+'<i class="fa-brands fa-discord"></i>';
+
+document.body.appendChild(discord);
+
+
+/* =============================
+      Console Message
+============================= */
+
+console.log("%cTrusted DC Seller",
+"color:#8b5cf6;font-size:22px;font-weight:bold;");
+
+console.log("%cPremium Website Loaded Successfully",
+"color:#00ff88;font-size:14px;");
