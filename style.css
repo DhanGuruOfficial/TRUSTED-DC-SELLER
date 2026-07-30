@@ -1823,3 +1823,365 @@ grid-template-columns:1fr;
 }
 
 }
+/* ==========================================
+   TRUSTED DC SELLER
+   V4 CSS PART 3
+========================================== */
+
+/* =============================
+   Aurora Background
+============================= */
+
+body::before,
+body::after{
+    animation:auroraRotate 30s linear infinite;
+}
+
+@keyframes auroraRotate{
+    0%{
+        transform:rotate(0deg) scale(1);
+    }
+    50%{
+        transform:rotate(180deg) scale(1.15);
+    }
+    100%{
+        transform:rotate(360deg) scale(1);
+    }
+}
+
+/* =============================
+   Shooting Stars
+============================= */
+
+.shooting-star{
+
+    position:fixed;
+
+    width:160px;
+    height:2px;
+
+    background:linear-gradient(
+    90deg,
+    #ffffff,
+    transparent);
+
+    border-radius:20px;
+
+    opacity:.7;
+
+    animation:shoot 8s linear infinite;
+
+    z-index:-3;
+
+}
+
+@keyframes shoot{
+
+0%{
+
+transform:
+translate(-200px,-200px)
+rotate(35deg);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translate(1800px,900px)
+rotate(35deg);
+
+opacity:0;
+
+}
+
+}
+
+/* =============================
+   Mouse Spotlight
+============================= */
+
+.spotlight{
+
+position:fixed;
+
+width:250px;
+height:250px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,
+rgba(124,58,237,.20),
+transparent 70%);
+
+pointer-events:none;
+
+transform:
+translate(-50%,-50%);
+
+z-index:-2;
+
+filter:blur(25px);
+
+}
+
+/* =============================
+   Hero Floating Animation
+============================= */
+
+.hero-content{
+
+animation:heroFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes heroFloat{
+
+0%{
+
+transform:
+translateY(0);
+
+}
+
+50%{
+
+transform:
+translateY(-12px);
+
+}
+
+100%{
+
+transform:
+translateY(0);
+
+}
+
+}
+
+/* =============================
+   Animated Logo
+============================= */
+
+.logo{
+
+animation:logoGlow 2.5s infinite alternate;
+
+}
+
+@keyframes logoGlow{
+
+from{
+
+text-shadow:
+0 0 10px #7c3aed;
+
+}
+
+to{
+
+text-shadow:
+0 0 35px #2563eb;
+
+}
+
+}
+
+/* =============================
+   Premium Image Effect
+============================= */
+
+.hero img{
+
+width:100%;
+
+animation:imageFloat 7s ease-in-out infinite;
+
+filter:
+drop-shadow(
+0 0 35px
+rgba(124,58,237,.4));
+
+}
+
+@keyframes imageFloat{
+
+0%{
+
+transform:
+translateY(0);
+
+}
+
+50%{
+
+transform:
+translateY(-20px);
+
+}
+
+100%{
+
+transform:
+translateY(0);
+
+}
+
+}
+
+/* =============================
+   Glass Navbar
+============================= */
+
+.navbar{
+
+background:
+rgba(10,10,20,.55);
+
+backdrop-filter:blur(24px);
+
+-webkit-backdrop-filter:blur(24px);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 8px 30px rgba(0,0,0,.35);
+
+}
+
+/* =============================
+   Footer Glow
+============================= */
+
+footer{
+
+background:
+linear-gradient(
+180deg,
+#05050a,
+#090914);
+
+}
+
+footer h3{
+
+text-shadow:
+0 0 15px rgba(124,58,237,.5);
+
+}
+
+/* =============================
+   Premium Button Hover
+============================= */
+
+.btn1:hover,
+.btn2:hover,
+.discord-btn:hover,
+.contact-btn:hover{
+
+transform:
+translateY(-6px)
+scale(1.04);
+
+transition:.35s;
+
+}
+
+/* =============================
+   Card Shine
+============================= */
+
+.card,
+.team-card,
+.price-card{
+
+transition:
+transform .35s,
+box-shadow .35s;
+
+}
+
+.card:hover,
+.team-card:hover,
+.price-card:hover{
+
+transform:
+translateY(-12px)
+scale(1.03);
+
+}
+
+/* =============================
+   Better Responsive
+============================= */
+
+@media(max-width:600px){
+
+.hero{
+
+padding-top:60px;
+
+}
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.logo{
+
+font-size:22px;
+
+}
+
+.navbar{
+
+padding:14px;
+
+}
+
+}
+
+/* =============================
+   Smooth Fade
+============================= */
+
+body{
+
+animation:fadePage .8s ease;
+
+}
+
+@keyframes fadePage{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
