@@ -1215,3 +1215,292 @@ transition:.6s;
 left:100%;
 
 }
+/* ==========================================
+   TRUSTED DC SELLER
+   V4 CSS PART 1
+========================================== */
+
+/* Premium Stars */
+
+.stars{
+    position:fixed;
+    inset:0;
+    z-index:-10;
+    overflow:hidden;
+}
+
+.star{
+
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    animation:twinkle 4s infinite ease-in-out;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.2;
+
+transform:scale(.5);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.8);
+
+}
+
+}
+
+
+/* Animated Border */
+
+.card,
+.team-card,
+.price-card{
+
+position:relative;
+
+}
+
+.card::after,
+.team-card::after,
+.price-card::after{
+
+content:"";
+
+position:absolute;
+
+inset:-1px;
+
+border-radius:25px;
+
+padding:1px;
+
+background:
+linear-gradient(
+135deg,
+#7c3aed,
+#2563eb,
+#06b6d4,
+#7c3aed);
+
+background-size:400%;
+
+animation:borderMove 8s linear infinite;
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+pointer-events:none;
+
+}
+
+@keyframes borderMove{
+
+0%{
+
+background-position:0%;
+
+}
+
+100%{
+
+background-position:400%;
+
+}
+
+}
+
+
+/* Floating Cards */
+
+.card,
+.team-card,
+.price-card{
+
+animation:floatCard 5s ease-in-out infinite;
+
+}
+
+.card:nth-child(2){
+
+animation-delay:.5s;
+
+}
+
+.card:nth-child(3){
+
+animation-delay:1s;
+
+}
+
+@keyframes floatCard{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+
+/* Neon Text */
+
+.hero h1{
+
+text-shadow:
+
+0 0 15px rgba(124,58,237,.4),
+
+0 0 35px rgba(37,99,235,.2);
+
+}
+
+
+/* Pricing Glow */
+
+.price-card h1{
+
+animation:priceGlow 2s infinite alternate;
+
+}
+
+@keyframes priceGlow{
+
+from{
+
+text-shadow:
+
+0 0 10px #7c3aed;
+
+}
+
+to{
+
+text-shadow:
+
+0 0 30px #2563eb,
+
+0 0 60px #7c3aed;
+
+}
+
+}
+
+
+/* Hero Background */
+
+.hero{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+height:700px;
+
+background:
+radial-gradient(circle,
+rgba(124,58,237,.25),
+transparent 70%);
+
+top:-250px;
+right:-250px;
+
+animation:rotateHero 20s linear infinite;
+
+}
+
+@keyframes rotateHero{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+/* Team Icons */
+
+.team-card i{
+
+transition:.4s;
+
+}
+
+.team-card:hover i{
+
+transform:scale(1.3) rotate(10deg);
+
+color:#FFD700;
+
+}
+
+
+/* Glass Blur */
+
+.card,
+.team-card,
+.price-card{
+
+backdrop-filter:blur(25px);
+
+-webkit-backdrop-filter:blur(25px);
+
+}
+
+
+/* Better Shadows */
+
+.card:hover,
+.team-card:hover,
+.price-card:hover{
+
+box-shadow:
+
+0 20px 80px rgba(124,58,237,.4),
+
+0 10px 40px rgba(37,99,235,.25);
+
+}
