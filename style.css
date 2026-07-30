@@ -1504,3 +1504,322 @@ box-shadow:
 0 10px 40px rgba(37,99,235,.25);
 
 }
+/* ==========================================
+   TRUSTED DC SELLER
+   V4 CSS PART 2
+========================================== */
+
+/* Animated Grid Background */
+
+.grid-bg{
+    position:fixed;
+    inset:0;
+    z-index:-20;
+    background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size:60px 60px;
+    animation:gridMove 18s linear infinite;
+}
+
+@keyframes gridMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(60px);
+    }
+}
+
+/* Section Title */
+
+section h2{
+    position:relative;
+    display:inline-block;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+section h2::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+bottom:-12px;
+
+transform:translateX(-50%);
+
+width:90px;
+height:4px;
+
+border-radius:10px;
+
+background:linear-gradient(90deg,#7c3aed,#2563eb);
+
+}
+
+
+/* Hero Badge */
+
+.hero-badge{
+
+display:inline-block;
+
+padding:10px 20px;
+
+margin-bottom:20px;
+
+border-radius:30px;
+
+background:rgba(124,58,237,.15);
+
+border:1px solid rgba(124,58,237,.35);
+
+color:#c4b5fd;
+
+font-weight:600;
+
+}
+
+
+/* Floating Shapes */
+
+.shape{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(3px);
+
+opacity:.2;
+
+animation:floatShape 12s ease-in-out infinite;
+
+}
+
+.shape.one{
+
+width:120px;
+height:120px;
+
+background:#7c3aed;
+
+top:15%;
+left:10%;
+
+}
+
+.shape.two{
+
+width:180px;
+height:180px;
+
+background:#2563eb;
+
+bottom:15%;
+right:8%;
+
+animation-delay:3s;
+
+}
+
+@keyframes floatShape{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-40px);
+
+}
+
+}
+
+
+/* Stats Cards */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+margin-top:60px;
+
+}
+
+.stat-card{
+
+padding:30px;
+
+text-align:center;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.35s;
+
+}
+
+.stat-card h3{
+
+font-size:42px;
+
+color:#8b5cf6;
+
+margin-bottom:10px;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 20px 50px rgba(124,58,237,.35);
+
+}
+
+
+/* Premium Footer */
+
+footer{
+
+background:#05050a;
+
+margin-top:100px;
+
+padding:60px 20px;
+
+text-align:center;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+footer h3{
+
+font-size:30px;
+
+margin-bottom:15px;
+
+color:#8b5cf6;
+
+}
+
+footer p{
+
+color:#9ca3af;
+
+line-height:1.8;
+
+}
+
+
+/* Footer Social */
+
+.footer-social{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+margin-top:25px;
+
+}
+
+.footer-social a{
+
+width:48px;
+
+height:48px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.06);
+
+color:white;
+
+font-size:20px;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+background:#7c3aed;
+
+transform:translateY(-6px);
+
+}
+
+
+/* Better Mobile */
+
+@media(max-width:768px){
+
+.hero{
+
+text-align:center;
+
+padding-top:80px;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.navbar{
+
+padding:15px;
+
+}
+
+.navbar ul{
+
+gap:15px;
+
+}
+
+.team-grid,
+.service-grid,
+.pricing-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
