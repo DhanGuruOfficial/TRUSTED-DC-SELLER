@@ -1086,3 +1086,259 @@ transform:translateY(0);
     transform:translateY(-3px);
     box-shadow:0 15px 35px rgba(124,58,237,.35);
 }
+/* ==========================================
+   LOGIN PAGE CSS - PART 2
+========================================== */
+
+/* Divider */
+
+.login-divider{
+display:flex;
+align-items:center;
+justify-content:center;
+margin:30px 0;
+position:relative;
+}
+
+.login-divider::before,
+.login-divider::after{
+
+content:"";
+
+flex:1;
+
+height:1px;
+
+background:rgba(255,255,255,.12);
+
+}
+
+.login-divider span{
+
+padding:0 18px;
+
+color:#94a3b8;
+
+font-size:14px;
+
+}
+
+/* Discord Login */
+
+.discord-login{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:12px;
+
+padding:16px;
+
+background:#5865F2;
+
+border-radius:14px;
+
+color:#fff;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+margin-bottom:25px;
+
+}
+
+.discord-login:hover{
+
+background:#4752C4;
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 35px rgba(88,101,242,.35);
+
+}
+
+.discord-login i{
+
+font-size:22px;
+
+}
+
+/* Register */
+
+.register-link{
+
+text-align:center;
+
+margin:20px 0;
+
+}
+
+.register-link p{
+
+color:#cbd5e1;
+
+}
+
+.register-link a{
+
+color:#8b5cf6;
+
+font-weight:600;
+
+text-decoration:none;
+
+}
+
+.register-link a:hover{
+
+text-decoration:underline;
+
+}
+
+/* Security */
+
+.login-info{
+
+margin-top:25px;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:15px;
+
+border-radius:12px;
+
+background:rgba(124,58,237,.08);
+
+border:1px solid rgba(124,58,237,.20);
+
+color:#cbd5e1;
+
+font-size:14px;
+
+}
+
+.login-info i{
+
+color:#8b5cf6;
+
+font-size:18px;
+
+}
+
+/* Footer */
+
+.login-footer{
+
+padding:25px;
+
+text-align:center;
+
+color:#94a3b8;
+
+font-size:14px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+margin-top:40px;
+
+}
+
+.login-footer p{
+
+margin:6px 0;
+
+}
+
+/* Input Placeholder */
+
+.input-box input::placeholder{
+
+color:#64748b;
+
+}
+
+/* Checkbox */
+
+.remember input{
+
+accent-color:#7c3aed;
+
+margin-right:6px;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.login-card{
+
+padding:30px 22px;
+
+}
+
+.login-top h2{
+
+font-size:28px;
+
+}
+
+.login-top i{
+
+font-size:50px;
+
+}
+
+.login-btn,
+
+.discord-login{
+
+padding:15px;
+
+font-size:15px;
+
+}
+
+.remember{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:12px;
+
+}
+
+.navbar{
+
+padding:15px 20px;
+
+}
+
+.logo{
+
+font-size:20px;
+
+}
+
+.discord-btn{
+
+padding:10px 18px;
+
+font-size:14px;
+
+}
+
+}
