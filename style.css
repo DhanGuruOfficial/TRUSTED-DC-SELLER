@@ -850,3 +850,23 @@ grid-template-columns:1fr;
 }
 
 }
+.hidden{
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.nav-links a.active{
+color:#a78bfa;
+}
+
+#topBtn{
+display:none;
+justify-content:center;
+align-items:center;
+}
