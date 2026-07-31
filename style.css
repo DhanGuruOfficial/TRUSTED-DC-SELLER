@@ -870,3 +870,83 @@ display:none;
 justify-content:center;
 align-items:center;
 }
+/* Ripple Effect */
+
+.btn-primary,
+.btn-secondary,
+.buy-btn,
+.contact-btn,
+.discord-btn{
+
+position:relative;
+overflow:hidden;
+
+}
+
+.ripple{
+
+position:absolute;
+
+border-radius:50%;
+
+transform:scale(0);
+
+background:rgba(255,255,255,.4);
+
+animation:ripple .6s linear;
+
+pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
+
+/* Smooth Animation */
+
+.service-card,
+.price-card,
+.team-card,
+.about-card,
+.hero-card{
+
+transition:.35s ease;
+
+}
+
+/* Loaded */
+
+.loaded{
+
+animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
