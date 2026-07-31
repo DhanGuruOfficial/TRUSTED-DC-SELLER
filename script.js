@@ -197,3 +197,164 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 
 });
+/* ==========================================
+   TRUSTED DC SELLER V6
+   SCRIPT PART 2
+========================================== */
+
+// ================================
+// Loading Animation
+// ================================
+
+window.addEventListener("load", () => {
+
+    document.body.classList.add("loaded");
+
+});
+
+// ================================
+// Hero Floating Effect
+// ================================
+
+const heroCard = document.querySelector(".hero-card");
+
+if(heroCard){
+
+setInterval(() => {
+
+heroCard.animate([
+
+{
+transform:"translateY(0px)"
+},
+
+{
+transform:"translateY(-12px)"
+},
+
+{
+transform:"translateY(0px)"
+}
+
+],{
+
+duration:3500,
+
+iterations:1
+
+});
+
+},3500);
+
+}
+
+
+// ================================
+// Button Ripple Effect
+// ================================
+
+document.querySelectorAll(
+".btn-primary,.btn-secondary,.buy-btn,.contact-btn,.discord-btn"
+).forEach(button=>{
+
+button.addEventListener("click",function(e){
+
+const ripple=document.createElement("span");
+
+const size=Math.max(
+this.clientWidth,
+this.clientHeight
+);
+
+const rect=this.getBoundingClientRect();
+
+ripple.style.width=size+"px";
+ripple.style.height=size+"px";
+
+ripple.style.left=
+e.clientX-rect.left-size/2+"px";
+
+ripple.style.top=
+e.clientY-rect.top-size/2+"px";
+
+ripple.classList.add("ripple");
+
+this.appendChild(ripple);
+
+setTimeout(()=>{
+
+ripple.remove();
+
+},600);
+
+});
+
+});
+
+
+// ================================
+// Card Hover Animation
+// ================================
+
+document.querySelectorAll(
+".service-card,.price-card,.team-card,.about-card"
+).forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.transform="translateY(-12px) scale(1.02)";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="translateY(0) scale(1)";
+
+});
+
+});
+
+
+// ================================
+// Fade Hero Text
+// ================================
+
+const heroTitle=document.querySelector(".hero h1");
+
+if(heroTitle){
+
+heroTitle.animate([
+
+{
+opacity:.7
+},
+
+{
+opacity:1
+}
+
+],{
+
+duration:1800,
+
+iterations:Infinity,
+
+direction:"alternate"
+
+});
+
+}
+
+
+// ================================
+// Console Message
+// ================================
+
+console.log("%cTrusted DC Seller",
+"color:#8b5cf6;font-size:28px;font-weight:bold;");
+
+console.log("%cDeveloped By Prince",
+"color:#60a5fa;font-size:16px;");
+
+console.log("%cPremium Website Loaded Successfully",
+"color:#22c55e;font-size:14px;");
